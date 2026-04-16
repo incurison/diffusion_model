@@ -66,7 +66,7 @@ def p_sample(model,x,t,t_index,T):
 # trainloop sample
 @torch.no_grad()
 def p_sample_loop(model,shape,timesteps):
-    device=next(iter(model.parameters()).device)
+    device=next(iter(model.parameters()).device
     b=shape[0]
     
     img=torch.randn(shape,device=device)
