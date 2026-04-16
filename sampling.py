@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import torch.functional as F
+import torch.nn.functional as F
 from einops.layers.torch import Rearrange
 def default(val,d):#默认值函数，在我们没有输入采样想要输出的维度的时候就按输入维度输出不变
     if val:
