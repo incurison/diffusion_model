@@ -5,7 +5,7 @@ from torchvision import datasets,transforms
 from torchvision.transforms import Compose
 from datasets import load_dataset
 from forward_back import cosine_beta_schedule,linear_beta_schedule,sigmoid_beta_schedule,extract,p_losses
-import torch.functional as F
+import torch.nn.functional as F
 from tqdm import tqdm
 from unet_all import Unet
 """数据加载"""
