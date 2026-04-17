@@ -70,11 +70,11 @@ def p_sample_loop(model,shape,timesteps):
     b=shape[0]
     
     img=torch.randn(shape,device=device)
-    imgs=[]
-    for i in tqdm(reversed(range(0,timesteps)),desc='sampling loop time step',total=timesteps):
-        img=p_sample(model,img,torch.full((b,),i,device=device,dtype=torch.long),i,timesteps)#把当前的的t扩展到(batch_size,1)的维度
-        imgs.append(img.cpu().numpy())
-    return imgs
+    # imgs=[] 这里的话我们后续可能制作gif图需要每一步生成的图
+    # for i in tqdm(reversed(range(0,timesteps)),desc='sampling loop time step',total=timesteps):
+    #     img=p_sample(model,img,torch.full((b,),i,device=device,dtype=torch.long),i,timesteps)#把当前的的t扩展到(batch_size,1)的维度
+    #     imgs.append(img.cpu().numpy())
+    return img
 
 @torch.no_grad()
 def sample(model,image_size,batch_size=16,channels=3):
